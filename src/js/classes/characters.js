@@ -18,7 +18,7 @@ export class Character {
   set name(name) {
     if (name.length < 2 || name.length > 10) {
       throw new Error(
-        "Длинна имени не может быть более и 10 и менне 2 символов"
+        'Длинна имени не может быть более и 10 и менне 2 символов'
       );
     }
     this.nameValue = name;
@@ -26,7 +26,7 @@ export class Character {
   set type(type) {
     const typeUnit = ['Bowerman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
     if (!typeUnit.includes(type)) {
-      throw new Error("Недопустимый тип юнита");
+      throw new Error('Недопустимый тип юнита');
     }
     this.typeValue = type;
   }
@@ -42,7 +42,7 @@ export class Character {
   }
   damage(points){
     points = 5;
-    if (this.health >= 0){
+    if (this.health > 0){
         this.health = this.health - (points * (1 - this.defence / 100))
     }
   }
